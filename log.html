@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LOG - My HP</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="log-page">
+
+    <h1>LOG</h1>
+
+    <!-- LOGを表示する場所 -->
+    <div id="log-container"></div>
+
+    <p>
+        <a href="index.html">← HOMEへ戻る</a>
+    </p>
+
+    <!-- LOGデータを読み込む -->
+    <script src="DATA/log.js"></script>
+
+    <!-- LOGを画面に表示する -->
+    <script>
+        const container = document.getElementById("log-container");
+
+        logs.forEach(log => {
+
+            const section = document.createElement("section");
+
+            const date = document.createElement("h2");
+            date.textContent = log.date;
+            section.appendChild(date);
+
+            const doneTitle = document.createElement("h3");
+            doneTitle.textContent = "完了";
+            section.appendChild(doneTitle);
+
+            const doneList = document.createElement("ul");
+
+            log.done.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                doneList.appendChild(li);
+            });
+
+            section.appendChild(doneList);
+
+            const nextTitle = document.createElement("h3");
+            nextTitle.textContent = "次にやること";
+            section.appendChild(nextTitle);
+
+            const nextList = document.createElement("ul");
+
+            log.next.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                nextList.appendChild(li);
+            });
+
+            section.appendChild(nextList);
+
+            container.appendChild(section);
+        });
+    </script>
+
+</body>
+
+</html>

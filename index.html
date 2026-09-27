@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My HP</title>
+<link rel="stylesheet" href="style.css">
+
+    <!-- LeafletのCSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+       <!-- 左側 -->
+<div class="left">
+<h1>My HP</h1>
+
+<hr>
+
+<p><a href="#" class="active">HOME</a></p>
+<p><a href="#">TRAVEL</a></p>
+<p><a href="#">GAME</a></p>
+<p><a href="#">BLOG</a></p>
+<p><a href="log.html">LOG</a></p>
+<p><a href="#">ABOUT</a></p>
+</div>
+
+        <!-- 右側 -->
+        <div class="right">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Leaflet -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+
+
+<script src="DATA/dogruns.js"></script>
+<script src="map.js"></script>
+
+</body>
+
+</html>
