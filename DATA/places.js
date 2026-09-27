@@ -20,5 +20,27 @@ const places = [
         "website": null,
         "instagram": null,
         "updated": 20260926
+    },
+    {
+        "id": "P000002",
+        "type": "place",
+        "name": "Re:and CAFE with DOG",
+        "subname": "リアンド",
+        "category": "ドッグラン",
+        "lat": 32.827863114285414,
+        "lng": 129.87460209619908,
+        "address": "〒851-2128 長崎県西彼杵郡長与町嬉里郷681-1",
+        "phone": null,
+        "hours": "11:00〜17:00",
+        "closed": "不定休",
+        "parking": null,
+        "visited": true,
+        "firstVisit": null,
+        "lastVisit": null,
+        "visitCount": 1,
+        "favorite": false,
+        "website": null,
+        "instagram": null,
+        "updated": 20260927
     }
 ];
