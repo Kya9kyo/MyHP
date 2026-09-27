@@ -14,11 +14,12 @@ const dogruns = [
         parking: "250台",
         updated: "20260926",
 
+
         // 自分用情報
         visited: true,
         firstVisit: "",
         lastVisit: "",
-        visitCount: 0,
+        visitCount: 1,
         memo: "",
         favorite: false,
 

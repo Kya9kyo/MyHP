@@ -15,7 +15,7 @@ L.tileLayer(
 
 
 // ドッグランを地図に表示
-dogruns.forEach(place => {
+places.forEach(place => {
 
     const popup = `
         <strong>${place.subname}</strong><br>
