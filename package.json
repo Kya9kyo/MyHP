@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "map.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "build": "node SCRIPTS/build-places.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kya9kyo/MyHP.git"
