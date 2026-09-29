@@ -12,7 +12,9 @@ L.tileLayer(
     }
 ).addTo(map);
 
-
+const petLayer = L.layerGroup().addTo(map);
+const roadsideStationLayer = L.layerGroup().addTo(map);
+const visitedRoadsideStationLayer = L.layerGroup();
 
 // ドッグランを地図に表示
 places.forEach(place => {
@@ -30,6 +32,11 @@ places.forEach(place => {
         <small>最終更新：${place.updated}</small>
     `;
 
+const targetLayer =
+    place.categoryId === "01"
+        ? roadsideStationLayer
+        : petLayer;
+
 L.circleMarker(
     [place.lat, place.lng],
     {
@@ -39,7 +46,27 @@ L.circleMarker(
         fillOpacity: 0.8
     }
 )
-    .addTo(map)
+    .addTo(targetLayer)
     .bindPopup(popup);
 
+if (place.categoryId === "01" && place.visited === true) {
+    L.circleMarker(
+        [place.lat, place.lng],
+        {
+            radius: 5,
+            color: "green",
+            fillColor: "green",
+            fillOpacity: 0.8
+        }
+    )
+        .addTo(visitedRoadsideStationLayer)
+        .bindPopup(popup);
+}
+
 });
+
+L.control.layers(null, {
+    "ペット関連": petLayer,
+    "道の駅 ALL": roadsideStationLayer,
+    "道の駅 行ったところのみ": visitedRoadsideStationLayer
+}).addTo(map);
