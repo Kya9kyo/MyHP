@@ -19,7 +19,8 @@ const places = [
         "favorite": false,
         "website": null,
         "instagram": null,
-        "updated": 20260926
+        "updated": 20260926,
+        "content": "# ドリーム合衆国\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n\n\n## 写真\n\n\n## 関連項目\n\n\n## 外部リンク"
     },
     {
         "id": "P000002",
@@ -41,7 +42,8 @@ const places = [
         "favorite": false,
         "website": null,
         "instagram": null,
-        "updated": 20260927
+        "updated": 20260927,
+        "content": "# ドリーム合衆国\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n\n\n## 写真\n\n\n## 関連項目\n\n\n## 外部リンク"
     },
     {
         "id": "P010001",
@@ -50,6 +52,7 @@ const places = [
         "subname": null,
         "category": "道の駅",
         "categoryId": "01",
+        "prefecture": "長崎県",
         "lat": 32.83595276157004,
         "lng": 129.70369842318613,
         "address": "〒851-2327 長崎県長崎市東出津町149-2",
@@ -64,6 +67,7 @@ const places = [
         "favorite": false,
         "website": null,
         "instagram": null,
-        "updated": 20260929
+        "updated": 20260929,
+        "content": "# 道の駅 夕陽が丘そとめ\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n景色がきれいな道の駅。\n\n## 写真\n![夕陽が丘そとめ](PHOTOS/P010001/01.jpg)\n\n## 関連項目\n\n\n## 外部リンク"
     }
 ];
