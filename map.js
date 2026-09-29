@@ -32,6 +32,8 @@ places.forEach(place => {
         <small>最終更新：${place.updated}</small>
     `;
 
+const markerColor = place.categoryId === "01" ? "blue" : "green";
+
 const targetLayer =
     place.categoryId === "01"
         ? roadsideStationLayer
@@ -40,9 +42,9 @@ const targetLayer =
 L.circleMarker(
     [place.lat, place.lng],
     {
-        radius: 5,
-        color: "green",
-        fillColor: "green",
+        radius: 3,
+color: markerColor,
+fillColor: markerColor,
         fillOpacity: 0.8
     }
 )
@@ -53,9 +55,9 @@ if (place.categoryId === "01" && place.visited === true) {
     L.circleMarker(
         [place.lat, place.lng],
         {
-            radius: 5,
-            color: "green",
-            fillColor: "green",
+            radius: 3,
+color: "blue",
+fillColor: "blue",
             fillOpacity: 0.8
         }
     )
