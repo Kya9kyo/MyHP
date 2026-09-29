@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TRAVEL - My HP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="travel-page">
+
+    <h1>TRAVEL</h1>
+
+    <div id="category-list"></div>
+
+    <p>
+        <a href="index.html">← HOMEへ戻る</a>
+    </p>
+
+    <script src="DATA/categories.js"></script>
+
+<script>
+    const categoryList = document.getElementById("category-list");
+
+Object.values(categories).forEach(category => {
+
+const item = document.createElement("p");
+
+const link = document.createElement("a");
+link.href = category.page;
+link.textContent = category.name;
+
+item.appendChild(link);
+categoryList.appendChild(item);
+});
+
+</script>
+
+</body>
+
+</html>

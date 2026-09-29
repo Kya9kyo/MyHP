@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>道の駅 - My HP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="travel-page">
+
+    <h1>道の駅</h1>
+
+<button id="show-all">すべて</button>
+<button id="show-visited">行ったところ</button>
+
+<div id="place-list"></div>
+
+    <p>
+        <a href="travel.html">← TRAVELへ戻る</a>
+    </p>
+
+<script src="DATA/places.js"></script>
+
+<script>
+    const roadsideStations = places.filter(place => place.categoryId === "01");
+
+    const placeList = document.getElementById("place-list");
+
+    roadsideStations.forEach(place => {
+        const item = document.createElement("p");
+        item.innerHTML =
+    (place.visited ? "✓ " : "□ ") +
+    `<a href="place.html?id=${place.id}">${place.name}</a>`;
+
+        placeList.appendChild(item);
+    });
+
+document.getElementById("show-all").addEventListener("click", () => {
+    location.reload();
+});
+
+document.getElementById("show-visited").addEventListener("click", () => {
+
+    placeList.innerHTML = "";
+
+    roadsideStations
+        .filter(place => place.visited === true)
+        .forEach(place => {
+            const item = document.createElement("p");
+            item.innerHTML =
+    `✓ <a href="place.html?id=${place.id}">${place.name}</a>`;
+            placeList.appendChild(item);
+        });
+});
+
+</script>
+
+</body>
+
+</html>

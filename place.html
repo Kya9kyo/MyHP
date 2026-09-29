@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PLACE - My HP</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+</head>
+
+<body class="travel-page">
+
+    <h1 id="place-name">PLACE</h1>
+
+    <div id="place-detail"></div>
+
+<div id="place-map"></div>
+
+
+    <p>
+        <a href="roadside-station.html">← 道の駅へ戻る</a>
+    </p>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="DATA/places.js"></script>
+
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const placeId = params.get("id");
+
+    console.log(placeId);
+
+const place = places.find(place => place.id === placeId);
+
+document.getElementById("place-name").textContent = place.name;
+document.getElementById("place-detail").innerHTML = `
+    <p><strong>住所：</strong>${place.address}</p>
+    <p><strong>電話：</strong>${place.phone}</p>
+    <p><strong>営業時間：</strong>${place.hours}</p>
+    <p><strong>休業日：</strong>${place.closed}</p>
+    <p><strong>駐車場：</strong>${place.parking}</p>
+    <p><strong>訪問：</strong>${place.visited ? "行った" : "まだ行ってない"}</p>
+`;
+
+const map = L.map("place-map").setView(
+    [place.lat, place.lng],
+    14
+);
+
+L.tileLayer(
+    "https://tile.openstreetmap.jp/{z}/{x}/{y}.png",
+    {
+        attribution: "&copy; OpenStreetMap contributors"
+    }
+).addTo(map);
+
+L.marker([place.lat, place.lng])
+    .addTo(map)
+    .bindPopup(place.name);
+
+</script>
+
+
+</body>
+
+</html>

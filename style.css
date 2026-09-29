@@ -63,3 +63,14 @@
 .log-page #log-container {
     max-width: 900px;
 }
+
+.travel-page {
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+#place-map {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+}
