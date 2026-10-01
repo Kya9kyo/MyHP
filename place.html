@@ -38,6 +38,14 @@ const place = places.find(place => place.id === placeId);
 
 document.getElementById("place-name").textContent = place.name;
 document.getElementById("place-content").innerHTML = marked.parse(place.content);
+const placeImages = document.querySelectorAll("#place-content img");
+placeImages.forEach(image => {
+    image.style.cursor = "pointer";
+
+    image.addEventListener("click", () => {
+        window.open(image.src, "_blank");
+    });
+});
 document.getElementById("place-detail").innerHTML = `
     <p><strong>住所：</strong>${place.address}</p>
     <p><strong>電話：</strong>${place.phone}</p>

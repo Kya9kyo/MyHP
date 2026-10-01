@@ -68,6 +68,6 @@ const places = [
         "website": null,
         "instagram": null,
         "updated": 20260929,
-        "content": "# 道の駅 夕陽が丘そとめ\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n景色がきれいな道の駅。\n\n## 写真\n![夕陽が丘そとめ](PHOTOS/P010001/01.jpg)\n\n## 関連項目\n\n\n## 外部リンク"
+        "content": "# 道の駅 夕陽が丘そとめ\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n景色がきれいな道の駅。\n\n## 写真\n![夕陽が丘そとめ](PHOTOS/P010001/01.jpg)\n![夕陽が丘そとめ](PHOTOS/P010001/02.jpg)\n\n## 関連項目\n\n\n## 外部リンク"
     }
 ];
