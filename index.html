@@ -33,7 +33,7 @@
 <p><a href="#">ABOUT</a></p>
 <div class="visitor-counter">
     <div>VISITOR</div>
-    <div id="visitor-count">------</div>
+    <div id="visitor-count"></div>
 </div>
 </div>
 
@@ -63,7 +63,8 @@
 window.addEventListener("load", function () {
     goatcounter.visit_count({
         append: "#visitor-count",
-        path: "/MyHP"
+        path: "/MyHP",
+        no_branding: true
     });
 });
 </script>
