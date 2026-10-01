@@ -60,13 +60,13 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <script>
-window.addEventListener("load", function () {
-    goatcounter.visit_count({
-        append: "#visitor-count",
-        path: "/MyHP",
-        no_branding: true
+fetch("https://kya9kyo.goatcounter.com/counter/%2FMyHP.json")
+    .then(response => response.json())
+    .then(data => {
+        const count = parseInt(data.count.replace(/,/g, ""), 10);
+        document.getElementById("visitor-count").textContent =
+            String(count).padStart(6, "0");
     });
-});
 </script>
 
 
