@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Wiki - My HP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="travel-page">
+
+    <h1>My Wiki</h1>
+
+    <h2>カテゴリー</h2>
+
+<div id="wiki-categories"></div>
+
+<h2>50音から探す</h2>
+
+<p>
+    あ　か　さ　た　な　は　ま　や　ら　わ
+</p>
+
+<p>
+    い　き　し　ち　に　ひ　み　　　り
+</p>
+
+<p>
+    う　く　す　つ　ぬ　ふ　む　ゆ　る
+</p>
+
+<p>
+    え　け　せ　て　ね　へ　め　　　れ
+</p>
+
+<p>
+    お　こ　そ　と　の　ほ　も　よ　ろ
+</p>
+
+<p>
+    A　B　C　D　E　F　G　H　I　J　K　L　M
+</p>
+
+<p>
+    N　O　P　Q　R　S　T　U　V　W　X　Y　Z
+</p>
+
+    <p>
+        <a href="index.html">← HOMEへ戻る</a>
+    </p>
+
+<script src="DATA/wiki.js"></script>
+
+<script>
+    const categoryContainer = document.getElementById("wiki-categories");
+
+    wiki
+        .filter(item => item.parents.length === 0)
+        .forEach(item => {
+            const p = document.createElement("p");
+const link = document.createElement("a");
+
+link.href = `wiki-page.html?id=${item.id}`;
+link.textContent = item.title;
+
+p.appendChild(link);
+categoryContainer.appendChild(p);
+        });
+</script>
+
+</body>
+
+</html>

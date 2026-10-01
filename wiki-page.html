@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Wiki - My HP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="travel-page">
+
+    <h1 id="wiki-title">My Wiki</h1>
+
+    <div id="wiki-content"></div>
+
+<div id="wiki-children"></div>
+
+    <p>
+        <a href="wiki.html">← My Wikiへ戻る</a>
+    </p>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="DATA/wiki.js"></script>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const wikiId = params.get("id");
+
+    const item = wiki.find(item => item.id === wikiId);
+
+document.getElementById("wiki-title").textContent = item.title;
+
+let wikiContent = item.content;
+
+wikiContent = wikiContent.replace(
+    /\[\[(W\d{6})\|([^\]]+)\]\]/g,
+    '<a href="wiki-page.html?id=$1">$2</a>'
+);
+
+document.getElementById("wiki-content").innerHTML =
+    marked.parse(wikiContent);
+
+const children = wiki.filter(child =>
+    child.parents && child.parents.includes(item.id)
+);
+
+const childrenContainer = document.getElementById("wiki-children");
+
+children.forEach(child => {
+    const p = document.createElement("p");
+
+    const link = document.createElement("a");
+    link.href = `wiki-page.html?id=${child.id}`;
+    link.textContent = child.title;
+
+    p.appendChild(link);
+    childrenContainer.appendChild(p);
+});
+
+    console.log(wikiId);
+    console.log(item);
+</script>
+
+</body>
+
+</html>

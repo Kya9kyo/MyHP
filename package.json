@@ -4,7 +4,7 @@
   "description": "",
   "main": "map.js",
 "scripts": {
-  "build": "node SCRIPTS/build-places.js"
+  "build": "node SCRIPTS/build-places.js && node SCRIPTS/build-wiki.js"
 },
   "repository": {
     "type": "git",
