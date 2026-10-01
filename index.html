@@ -31,6 +31,10 @@
 <p><a href="wiki.html">My Wiki</a></p>
 <p><a href="log.html">LOG</a></p>
 <p><a href="#">ABOUT</a></p>
+<div class="visitor-counter">
+    <div>VISITOR</div>
+    <div id="visitor-count">------</div>
+</div>
 </div>
 
         <!-- 右側 -->
@@ -54,6 +58,16 @@
 
 <script data-goatcounter="https://kya9kyo.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<script>
+window.addEventListener("load", function () {
+    goatcounter.visit_count({
+        append: "#visitor-count",
+        path: "/MyHP"
+    });
+});
+</script>
+
 
 </body>
 
