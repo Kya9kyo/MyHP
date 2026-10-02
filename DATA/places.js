@@ -69,5 +69,30 @@ const places = [
         "instagram": null,
         "updated": 20260929,
         "content": "# 道の駅 夕陽が丘そとめ\n\n## 概要\n\n\n## 訪問記録\n\n\n## メモ\n景色がきれいな道の駅。\n\n## 写真\n![夕陽が丘そとめ](PHOTOS/P010001/01.jpg)\n![夕陽が丘そとめ](PHOTOS/P010001/02.jpg)\n\n## 関連項目\n\n\n## 外部リンク"
+    },
+    {
+        "id": "P010002",
+        "type": "place",
+        "name": "道の駅 三笠",
+        "subname": null,
+        "category": "道の駅",
+        "categoryId": "01",
+        "prefecture": "北海道",
+        "lat": 43.246667,
+        "lng": 141.804444,
+        "address": "〒068-2165 北海道三笠市岡山1056-1",
+        "phone": "01267-2-5775",
+        "hours": "8:30〜17:00",
+        "closed": "毎週月曜日（祝日の場合は翌日）、年末年始",
+        "parking": "大型13台、普通車202台",
+        "visited": false,
+        "firstVisit": null,
+        "lastVisit": null,
+        "visitCount": 0,
+        "favorite": false,
+        "website": null,
+        "instagram": null,
+        "updated": 20261002,
+        "content": "\n# 道の駅 三笠\n\n## 概要\n\n北海道の道の駅。\n\n## 訪問記録\n\n## メモ\n\n## 写真\n\n## 関連項目\n\n## 外部リンク"
     }
 ];
