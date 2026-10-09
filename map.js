@@ -36,7 +36,7 @@ places.forEach(place => {
       `
     : `
         <strong>${place.subname || ""}</strong><br>
-        ${place.name}<br><br>
+        <a href="place.html?id=${place.id}">${place.name}</a><br><br>
 
         <strong>住所：</strong>${place.address || ""}<br>
         <strong>電話：</strong>${place.phone || ""}<br>
