@@ -9,5 +9,11 @@ const categories = {
         name: "道の駅",
         startId: "P010001",
         page: "roadside-station.html"
-    }
+    },
+
+"03": {
+    name: "世界遺産",
+    startId: "P030001",
+    page: "world-heritage.html"
+}
 };

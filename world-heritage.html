@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>道の駅 - My HP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="travel-page">
+
+    <h1>世界遺産</h1>
+
+<button id="show-all">すべて</button>
+<button id="show-visited">行ったところ</button>
+
+<div id="place-list"></div>
+
+    <p>
+        <a href="travel.html">← TRAVELへ戻る</a>
+    </p>
+
+<script src="DATA/places.js"></script>
+
+<script>
+const worldHeritageSites = places.filter(
+    place => place.categoryId === "03"
+);
+
+const placeList = document.getElementById("place-list");
+
+// 国別に世界遺産を表示
+function displayWorldHeritage(sites) {
+
+    placeList.innerHTML = "";
+
+    const countries = {};
+
+    sites.forEach(place => {
+
+        // 複数国にも対応
+        const countryList = String(place.states_names || "Unknown")
+            .split(",")
+            .map(country => country.trim());
+
+        countryList.forEach(country => {
+
+            if (!countries[country]) {
+                countries[country] = [];
+            }
+
+            countries[country].push(place);
+        });
+    });
+
+    // 国名をアルファベット順に並べる
+    Object.keys(countries)
+        .sort((a, b) => a.localeCompare(b))
+        .forEach(country => {
+
+            const countryTitle = document.createElement("h2");
+            countryTitle.textContent = country;
+            placeList.appendChild(countryTitle);
+
+            countries[country].forEach(place => {
+
+                const item = document.createElement("p");
+
+                item.innerHTML =
+                    (place.visited ? "✓ " : "□ ") +
+                    `<a href="place.html?id=${place.id}">${place.name}</a>`;
+
+                placeList.appendChild(item);
+            });
+        });
+}
+
+
+// 最初はすべて表示
+displayWorldHeritage(worldHeritageSites);
+
+
+// 「すべて」
+document.getElementById("show-all").addEventListener("click", () => {
+    displayWorldHeritage(worldHeritageSites);
+});
+
+
+// 「行ったところ」
+document.getElementById("show-visited").addEventListener("click", () => {
+
+    const visitedSites = worldHeritageSites.filter(
+        place => place.visited === true
+    );
+
+    displayWorldHeritage(visitedSites);
+});
+
+</script>
+
+</body>
+
+</html>

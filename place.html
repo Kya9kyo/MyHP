@@ -20,7 +20,7 @@
 
 
     <p>
-        <a href="roadside-station.html">← 道の駅へ戻る</a>
+        <p id="back-link"></p>
     </p>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -36,6 +36,16 @@
 
 const place = places.find(place => place.id === placeId);
 
+const backLink = document.getElementById("back-link");
+
+if (place.categoryId === "03") {
+    backLink.innerHTML = `<a href="world-heritage.html">← 世界遺産へ戻る</a>`;
+} else if (place.categoryId === "01") {
+    backLink.innerHTML = `<a href="roadside-station.html">← 道の駅へ戻る</a>`;
+} else {
+    backLink.innerHTML = `<a href="travel.html">← TRAVELへ戻る</a>`;
+}
+
 document.getElementById("place-name").textContent = place.name;
 document.getElementById("place-content").innerHTML = marked.parse(place.content);
 const placeImages = document.querySelectorAll("#place-content img");
@@ -46,14 +56,32 @@ placeImages.forEach(image => {
         window.open(image.src, "_blank");
     });
 });
+if (place.categoryId === "03") {
+
 document.getElementById("place-detail").innerHTML = `
-    <p><strong>住所：</strong>${place.address}</p>
-    <p><strong>電話：</strong>${place.phone}</p>
-    <p><strong>営業時間：</strong>${place.hours}</p>
-    <p><strong>休業日：</strong>${place.closed}</p>
-    <p><strong>駐車場：</strong>${place.parking}</p>
-    <p><strong>訪問：</strong>${place.visited ? "行った" : "まだ行ってない"}</p>
-`;
+    <p>${place.name_en}</p>
+    <p>${place.short_description || ""}</p>
+    <p><strong>国：</strong>${place.states_names}</p>
+        <p><strong>地域：</strong>${place.region}</p>
+        <p><strong>分類：</strong>${place.unesco_category}</p>
+        <p><strong>登録年：</strong>${place.date_inscribed}</p>
+        <p><strong>登録基準：</strong>${place.criteria}</p>
+        <p><strong>面積：</strong>${place.area_hectares} ha</p>
+        <p><strong>訪問：</strong>${place.visited ? "行った" : "まだ行ってない"}</p>
+    `;
+
+} else {
+
+    document.getElementById("place-detail").innerHTML = `
+        <p><strong>住所：</strong>${place.address || ""}</p>
+        <p><strong>電話：</strong>${place.phone || ""}</p>
+        <p><strong>営業時間：</strong>${place.hours || ""}</p>
+        <p><strong>休業日：</strong>${place.closed || ""}</p>
+        <p><strong>駐車場：</strong>${place.parking || ""}</p>
+        <p><strong>訪問：</strong>${place.visited ? "行った" : "まだ行ってない"}</p>
+    `;
+
+}
 
 const map = L.map("place-map").setView(
     [place.lat, place.lng],

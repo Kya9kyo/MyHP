@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "map.js",
-"scripts": {
-  "build": "node SCRIPTS/build-places.js && node SCRIPTS/build-wiki.js"
-},
+  "scripts": {
+    "build": "node SCRIPTS/build-places.js && node SCRIPTS/build-wiki.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kya9kyo/MyHP.git"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Kya9kyo/MyHP#readme",
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "xlsx": "^0.18.5"
   }
 }
